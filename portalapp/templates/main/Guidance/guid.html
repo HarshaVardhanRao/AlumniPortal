@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Placement Guidance Path</title>
+    <style>
+        /* styles.css */
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 20px;
+}
+
+.container {
+    max-width: 600px;
+    margin: auto;
+    background: white;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1, h2 {
+    text-align: center;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+form input {
+    margin: 5px 0;
+    padding: 10px;
+}
+
+button {
+    padding: 10px;
+    background-color: #28a745;
+    border: none;
+    color: white;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #218838;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+li {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    background: #e9ecef;
+    margin: 5px 0;
+    border-radius: 5px;
+}
+
+.delete-btn {
+    background: red;
+    border: none;
+    color: white;
+    cursor: pointer;
+}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Placement Guidance Path</h1>
+        
+        <form id="placementForm">
+            <input type="text" id="company" placeholder="Company Name" required>
+            <input type="text" id="position" placeholder="Position" required>
+            <input type="text" id="contact" placeholder="Contact Info" required>
+            <button type="submit">Add Placement</button>
+        </form>
+
+        <h2>Stored Placements</h2>
+        <ul id="placementList"></ul>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+    const placementForm = document.getElementById('placementForm');
+    const placementList = document.getElementById('placementList');
+
+    placementForm.addEventListener('submit', function(event) {
+        event.preventDefault();
+        
+        const company = document.getElementById('company').value;
+        const position = document.getElementById('position').value;
+        const contact = document.getElementById('contact').value;
+
+        const placement = { company, position, contact };
+        savePlacement(placement);
+        renderPlacements();
+        placementForm.reset();
+    });
+
+    function savePlacement(placement) {
+        let placements = localStorage.getItem('placements') ? JSON.parse(localStorage.getItem('placements')) : [];
+        placements.push(placement);
+        localStorage.setItem('placements', JSON.stringify(placements));
+    }
+
+    function renderPlacements() {
+        let placements = localStorage.getItem('placements') ? JSON.parse(localStorage.getItem('placements')) : [];
+        placementList.innerHTML = '';
+        placements.forEach((placement, index) => {
+            const li = document.createElement('li');
+            li.innerHTML = `${placement.company} | ${placement.position} | ${placement.contact} <button class="delete-btn" onclick="deletePlacement(${index})">Delete</button>`;
+            placementList.appendChild(li);
+        });
+    }
+
+    window.deletePlacement = function(index) {
+        let placements = JSON.parse(localStorage.getItem('placements'));
+        placements.splice(index, 1);
+        localStorage.setItem('placements', JSON.stringify(placements));
+        renderPlacements();
+    }
+
+    renderPlacements(); // render placements on initial load
+});
+    </script>
+</body>
+</html>

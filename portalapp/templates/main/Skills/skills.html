@@ -1,4 +1,73 @@
-document.addEventListener('DOMContentLoaded', () => {
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Storage Web Application</title>
+    <style>
+        body {
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+    margin: 0;
+    padding: 20px;
+}
+
+.container {
+    max-width: 600px;
+    margin: auto;
+    background: white;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+h1 {
+    text-align: center;
+}
+
+input {
+    width: 70%;
+    padding: 10px;
+    margin-right: 10px;
+}
+
+button {
+    padding: 10px 15px;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    margin-top: 10px;
+    background: #e9ecef;
+    border-radius: 5px;
+}
+
+button.delete {
+    background: red;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Data Storage</h1>
+        <input type="text" id="dataInput" placeholder="Enter some data" />
+        <button id="addDataBtn">Add Data</button>
+        <ul id="dataList"></ul>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
     const dataInput = document.getElementById('dataInput');
     const addDataBtn = document.getElementById('addDataBtn');
     const dataList = document.getElementById('dataList');
@@ -39,3 +108,6 @@ document.addEventListener('DOMContentLoaded', () => {
     addDataBtn.addEventListener('click', addData);
     loadData();
 });
+    </script>
+</body>
+</html>

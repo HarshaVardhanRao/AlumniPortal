@@ -5,6 +5,79 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="story.css">
     <title>Alumni Success Stories</title>
+    <style>
+        body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-color: #f5f5f5;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+h1 {
+    color: #333;
+}
+
+h2 {
+    color: #007BFF;
+}
+
+#story-form {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
+}
+
+form input, form textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+form button {
+    background-color: #007BFF;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+form button:hover {
+    opacity: 0.8;
+}
+
+#stories {
+    display: flex;
+    flex-direction: column;
+}
+
+.story-item {
+    background: white;
+    padding: 20px;
+    margin: 10px 0;
+    border-radius: 8px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.story-item img {
+    width: 100px;
+    height: auto;
+    border-radius: 50%;
+}
+
+.story-item h3 {
+    margin: 10px 0;
+}
+    </style>
 </head>
 <body>
     <header>
@@ -29,6 +102,56 @@
         <div id="story-container"></div>
     </section>
 
-    <script src="story.js"></script>
+    <script>
+        document.getElementById('success-story-form').addEventListener('submit', function(e) {
+    e.preventDefault(); // Prevent page refresh
+
+    const name = document.getElementById('name').value;
+    const profession = document.getElementById('profession').value;
+    const story = document.getElementById('story').value;
+    const imageFile = document.getElementById('image').files[0];
+
+    // Create a FileReader to read the image
+    const reader = new FileReader();
+    reader.onload = function(event) {
+        const storyContainer = document.getElementById('story-container');
+
+        // Create a new story item
+        const storyItem = document.createElement('div');
+        storyItem.classList.add('story-item');
+
+        // Add story content to the new story item
+        storyItem.innerHTML = `
+            <img src="${event.target.result}" alt="${name}'s Image">
+            <h3>${name}, ${profession}</h3>
+            <p>${story}</p>
+        `;
+
+        // Append the new story item to the container
+        storyContainer.appendChild(storyItem);
+
+        // Clear the form
+        document.getElementById('success-story-form').reset();
+    };
+
+    // Read the image file
+    if (imageFile) {
+        reader.readAsDataURL(imageFile);
+    } else {
+        // Create story without an image if none is uploaded
+        const storyContainer = document.getElementById('story-container');
+
+        const storyItem = document.createElement('div');
+        storyItem.classList.add('story-item');
+        storyItem.innerHTML = `
+            <h3>${name}, ${profession}</h3>
+            <p>${story}</p>
+        `;
+
+        storyContainer.appendChild(storyItem);
+        document.getElementById('success-story-form').reset();
+    }
+});
+    </script>
 </body>
 </html>
