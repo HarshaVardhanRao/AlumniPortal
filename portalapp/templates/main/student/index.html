@@ -1,0 +1,1989 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Form with Table</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    {% comment %} <link rel="stylesheet" href="style1.css"> {% endcomment %}
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <style>
+      @import url('https://fonts.googleapis.com/css?family=Montserrat:400,600&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    align-items: center;
+    background: #8079e3;
+    color: rgba(0, 0, 0, .8);
+    display: grid;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    height: 100vh;
+    justify-items: center;
+}
+
+
+.left {
+    background: #8088ee;
+        /* fallback for old browsers */
+        background: -webkit-linear-gradient(to right, #558508, #495889);
+        /* Chrome 10-25, Safari 5.1-6 */
+        background: linear-gradient(to right, #9ec72b, #a1a8bf);
+        /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    position: relative;
+    text-align: center;
+    border-top-right-radius: 25%;
+    border-bottom-right-radius: 25%;
+    box-shadow: rgba(168, 171, 173, 0.25) 0px 50px 100px -20px, rgba(175, 170, 170, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+    /* box-shadow: #f5ce321d 10px 0px 0px 10px; */
+/* border-radius: 40%; */
+    /* -ms-transform: translateX(-2%) translateY(-2%);
+    transform: translateX(-2%) translateY(-2%); */
+   
+}
+.left2{
+/* background-color: rgb((14, 9, 94) 76, 114); */
+background: #C33764;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #1d713c, #7f7bab);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #232d8581, #a7c337);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    position: relative;
+    text-align: center;
+    border-top-left-radius: 25%;
+    border-bottom-left-radius: 25%;
+    box-shadow: rgba(168, 171, 173, 0.25) 0px 50px 100px -20px, rgba(175, 170, 170, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+}
+.right, .right2{
+  
+    /* background-color: #455A64; */
+
+    color: #Ffffff;
+    z-index: 22;
+}
+.right2 h1, p {
+    color: #F2C010;
+    /* font-size: 24px; */
+    text-align: left;
+
+
+}
+.right h1{
+color: #F2C010;
+    font-size: 24px;
+    text-align: left;
+    
+
+}
+.left2 h1{
+    color:white
+}
+.left  h1{
+color:#5C0E35;
+    
+    
+    font-size: 30px;
+    font-weight: bold;
+  
+  /* margin-top: 130px; */
+  
+
+   
+}
+.left2 .stdImg{
+
+bottom: 7;
+
+
+
+position: absolute;
+text-align: center;
+}
+.left2 .stdImg img{
+height: 70vh;
+width: 100%;
+
+}
+
+.left .stdImg {
+   bottom: -3%;
+   
+
+        position: absolute;
+        text-align: center;
+       
+       
+    }
+
+
+.bi{
+ font-size: 15px;
+ margin-right: 4px;
+}
+label{
+    background: transparent;
+        border: 1px solid transparent;
+        border-radius: 2px;
+        display: inline-block;
+        height: 26px;
+        line-height: 26px;
+        margin: 0;
+        padding: 0;
+        /* text-align: center; */
+       
+}
+.con2 {
+
+
+    margin-bottom: 20px !important;
+
+    /* background: rgb(58, 117, 189); */
+    background: #0f0c29;
+        /* fallback for old browsers */
+        background: -webkit-linear-gradient(to right, #24243e, #302b63, #0f0c29);
+        /* Chrome 10-25, Safari 5.1-6 */
+        background: linear-gradient(to right, #24243e, #302b63, #0f0c29);
+        /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    color: #455A64;
+
+
+}
+.con{
+  
+    
+    margin-bottom: 20px !important;
+   
+    /* background: #192a56; */
+    background: #c31432;
+        /* fallback for old browsers */
+        background: -webkit-linear-gradient(to right, #240b36, #6c65f3);
+        /* Chrome 10-25, Safari 5.1-6 */
+        background: linear-gradient(to right, #240b36, #4c14c3);
+        /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    color: white;
+   
+  
+} 
+.btn21{
+/* background-color: transparent; */
+background: #C33764;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #1D2671, #7fc337);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #1D2671, #82c337);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    margin-right: 40px;
+    margin-left: 40px;
+    margin-bottom: 20px;
+    /* box-shadow: #f8f8f675 0px 10px 20px 0px; */
+    box-shadow: rgb(58, 117, 189) 0px 50px 100px -20px, rgba(181, 176, 176, 0.3) 0px 30px 60px -30px, rgba(3, 42, 90, 0.322) 0px -2px 6px 0px inset !important
+}
+
+.btn12{
+    /* border-bottom-left-radius: 20%;
+    border-top-left-radius: 20%;
+border-bottom-right-radius: 20%;
+    border-top-right-radius: 20%; */
+  /* border-radius: 15%; */
+  /* background-color: #dcdde1!important; */
+background: #44da58;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #213689, #44da6a);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #89216B, #44da8f);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+    margin-right: 40px;
+    margin-left: 40px;
+    margin-bottom: 20px;
+    /* box-shadow: #f8f8f675 0px 10px 20px 0px; */
+    box-shadow: rgba(183, 183, 191, 0.25) 0px 50px 100px -20px, rgba(181, 176, 176, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset !important
+    ;
+}.modal{
+    z-index:22222 ;
+}
+input{
+    box-shadow: rgba(183, 183, 191, 0.25) 0px 50px 100px -20px, rgba(181, 176, 176, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+}
+.btn12 button{
+    background-color: darkcyan !important;
+    
+    color: white;
+}
+.btn12 button:hover{
+background-color: #F2C010 !important;
+        color: white;
+}
+.btn21 button {
+    background-color: white !important;
+
+    color:(58, 117, 189) ;
+    box-shadow: rgb(58, 117, 189) 0px 50px 100px -20px, rgba(181, 176, 176, 0.3) 0px 30px 60px -30px, rgba(3, 42, 90, 0.322) 0px -2px 6px 0px inset !important
+}
+
+.btn21 button:hover {
+    background-color: #F2C010 !important;
+    color: white;
+}
+h1{
+    text-align: center;
+    color: aqua;
+
+  
+}
+.img{
+width: 35%;
+margin-top: 10px;
+opacity: 0.5;
+
+}
+
+.tb-butn{
+    text-align: center;
+   
+}
+ .action-buttons {
+     cursor: pointer;
+     color: #F2C010;
+     margin-right: 10px;
+ }
+ tr th{
+    text-align: center !important;
+
+ }
+ .btn22{
+    outline: none;
+    border: none;
+margin-top: 10px;
+background-color: rgb(156, 62, 243);
+color: white;
+padding: 0px 1 0px 1px;
+
+ }
+.btn1 , .btn2 ,.btn3,
+.btn4{
+outline: none ;
+border: none;
+/* background-color:#192a56; */
+color: rgb(76, 18, 163);
+padding: 2px 3px 2px 3px;
+border-radius: 2px;
+box-shadow: none;
+
+}
+.btn1{
+    margin-left: 18px
+}
+.btn2 {
+    margin-left: 5px;
+    /* background-color:  */
+    box-shadow: none;
+    color: rgb(220, 20, 20);
+    padding: 2px;
+}
+.btn4{
+ 
+    box-shadow: none;
+        color: red;
+        padding: 2px;
+}
+ thead tr th {
+    background-color: #273c75 !important;
+    color: #f5f6fa !important;
+ }
+ /* tbody tr td:hover{
+    background-color: #487eb0 !important;
+    color: #dcdde1;
+ } */
+
+ #colapsRowId th {
+    background-color:#dcdde1!important;
+        color: #192a56 !important;
+ }
+    </style>
+</head>
+<body>
+  <a href="/landing.html" class="_blank" >
+    <button>Go Back</button>
+</a>
+<div class=".container con  ">
+  <div class="row">
+  <div class="left col-4">
+   <div class="row">
+    <div class="col-12"></div>
+   </div>
+    
+   <img class="img" src="Captureioipio-removebg-preview.png" alt="">
+    <h1 class="flex-wrap  px-4">
+      <!-- <i class="fas fa-paw"></i> -->
+      
+Student Registration Form
+    </h1>
+    
+     <div class="stdImg ">
+      <img src="register.png" class="img-fluid w-75" />
+    </div>
+  </div>
+  {% comment %} <form name="StudenRegistrationForm" class="right tab col-8" >
+  
+    <div class="form">
+     
+<div class="row p-5 ">
+    <h1>Enter Here your Basic Details!</h1>
+<div class="col-6 ">
+
+ <div class="mb-3">
+  <label for="name" class="form-label"><i class="bi bi-person-check-fill"></i>Full Name: </label>
+  <input type="text" class="form-control" name="name" id="name" >
+  <span style="display: block;color: #F2C010; " id="error1"></span>
+    </div>
+    <div class="mb-3">
+  <label for="PostAdress" class="form-label"><i class="bi bi-postage"></i>Doubt On</label>
+  <input type="text" class="form-control" name="PostAdress" id="PostAdress" >
+  <span style="display: block;color: #F2C010;" id="error3"></span>
+    </div>
+
+<div class="row mb-4 ">   
+  
+  <div class="row ">
+ <label for="Gender" class="form-label row text-center col-12 align-content-center  mx-2 ">Gender:</label>
+  </div>
+ 
+    <div class="form-check col-5 mx-3 ">
+  <input class="form-check-input" type="checkbox" value="male" id="Gender" name="Gender">
+  <label class="form-check-label" for="flexCheckDefault">
+   Male
+  </label>
+  <span style="display: block;color: #F2C010; " id="error5"></span>
+</div>
+<div class="form-check col-5">
+  <input class="form-check-input" type="checkbox" value="female" id="Gender"  name="Gender">
+  <label class="form-check-label" for="flexCheckChecked">
+    Female
+  </label>
+
+  
+</div>
+</div>
+<label for="" class="form-label"><i class="bi bi-building"></i>City:</label>
+<select class="form-select " aria-label="Default select example" name="City" id="City">
+  <option value="-1" >select..</option>
+  <option value="Madanapalle">Madanapalle</option>
+  <option value="Chittoor">Chittoor</option>
+  <option value="kadapa">Kadapa</option>
+  <option value="Ananthapur">Ananthapur</option>
+  <option value="Other">Other</option> 
+</select>
+<span style="display: block;color: #F2C010" class="mb-3" id="error7"></span>
+   <div class="mb-3">
+  <label for="pincode" class="form-label"><i class="bi bi-pen"></i>Pin Code:</label>
+  <input type="number" class="form-control" name="pincode" id="pincode" >
+  <span style="display: block;color: #F2C010" id="error9"></span>
+    </div>
+    
+       <div class="mb-3">
+  <label for="phoneNumber" class="form-label"><i class="bi bi-phone"></i>Phone Number:</label>
+  <input type="tel" class="form-control" name="phoneNumber" id="phoneNumber" >
+  <span style="display: block;color: #F2C010" id="error11"></span>
+    </div>
+
+</div>
+
+<!-- second -->
+<div class="col-6  lefOfLeft">
+   <div class="mb-3">
+  <label for="fatherName" class="form-label"><i class="bi bi-person-fill"></i>College ID No:</label>
+  <input type="text" class="form-control" name="fatherName" id="fatherName" >
+  <span style="display: block;color: #F2C010" id="error2"></span>
+    </div>
+       <div class="mb-3">
+  <label for="perAddress" class="form-label"><i class="bi bi-geo-alt"></i>college Name:</label>
+  <input type="text" class="form-control" name="perAddress" id="perAddress" >
+  <span style="display: block;color: #F2C010" id="error4"></span>
+    </div>
+    <label for="" class=" mb-2"><i class="bi bi-journal-bookmark"></i>Course:</label>
+<select class="form-select  " aria-label="Default select example" name="Course" id="Course">
+  <option value="-1" >select..</option>
+  <option  value="CSE">CSE</option>
+  <option value="CST">CST</option>
+  <option value="CSE(AI)">CSE(AI)</option>
+  <option value="CSE(DS)">CSE(DS)</option>
+  <option value="CSE(AI/ML)">CSE(AI/ML)</option>
+  <option value="CSE(CS)">CSE(CS)</option>
+  <option value="CSE(CN)">CSE(CN)</option>
+  <option value="CSE(IT)">CSE(IT)</option>
+  <option value="CSE(IOT)">CSE(IOT)</option>
+  <option value="ECE">ECE</option>
+  <option value="EEE">EEE</option>
+  <option value="MCA">MCA</option>
+  <option value="MBA">MBA</option>
+</select>
+<span style="display: block;color: #F2C010" class="mb-3" id="error6"></span>
+
+<label for="" class="form-label "><i class="bi bi-buildings"></i>Province:</label>
+<select class="form-select " aria-label="Default select example" name="Province" id="Province">
+  <option value="-1" >select..</option>
+  <option value="Andhra Pradesh">Andhra Pradesh</option>
+  <option value="Karnataka">Karnataka</option>
+  <option value="Tamilnadu">Tamilnadu</option>
+  <option value="Talangana">Talangana</option>
+  <option value="Other">Other</option>
+</select>
+<span style="display: block;color: #F2C010" class="mb-3" id="error8"></span>
+  <div class="mb-3">
+  <label for="emailId" class="form-label"><i class="bi bi-envelope-arrow-up"></i>College Email Id:</label>
+  <input type="email" class="form-control" name="emailId" id="emailId" >
+  <span style="display: block;color: #F2C010" id="error10"></span>
+    </div>
+
+</div>
+
+
+
+   </div>
+
+      
+  
+ 
+ 
+      
+ 
+
+
+    </div>
+    <div class="row btn12  py-4 px-4 rounded">
+      <div class="col-6">
+<button type="reset"  class="btn " onclick="resetForm()">Reset</button></div>
+      <div class="col-6"><button type="button"id="submitBtn"  class="btn float-end" data-toggle="modal" onclick="return validate();" >
+  Submit
+</button></div>
+    </div>
+     
+
+
+  </form> {% endcomment %}
+  <form method="post">
+    {% csrf_token %}
+    <input type="text" name="topic">
+    <input type="text" name="query">
+    <button type="submit">Submit</button>
+  </form>
+ 
+ </div>
+ </div>
+
+
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered"   role="document">
+    <div class="modal-content" style="background-color: #192a56">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle" style="color: #ffff; font-weight: bold;"></h5>
+        
+        <button type="button" onclick="modalClose()"class="btn-close" aria-label="Close"></button>
+      </div>
+      <div class="modal-body" id="modal-body" style="color: #ffff ;">
+        
+      </div>
+      <div class="modal-footer ">
+        
+        <button  id="delbtn" type="button"  style="display: none;" class="btn btn-primary">Yes</button>  <button  id="updatebtn" type="button"  style="display: none;" class="btn btn-primary">Yes</button>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal" id="btnDelete" onclick="modalClose()"></button>
+      
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container-fluid ">
+<div class="row">
+  <div class="col-12">
+<div class=" table-responsive rounded ">
+  <table class="table  table-hover  " id="tabel1">
+    <thead class="tabelHeader">
+      <tr>
+        <th scope="col" >#</th>
+        <th scope="col">Full Name</th>
+        <th scope="col">Course</th>
+        <th scope="col">Doubt On</th>
+        
+        <th scope="col">Details</th>
+        <th scope="col">Phone</th>
+        <th scope="col">Actions</th>
+      </tr>
+    </thead>
+    <tbody id="tabel" >
+      {% for query in allquery %}
+     <tr>{{ forloop.counter }}</tr>
+     <tr>{{query.alumni.username}}</tr>
+     <tr>CSE</tr>
+     <tr>{{query.topic}}</tr>
+     <tr>{{query.query}}</tr>
+     
+     <tr>{{query.alumni.phone_no}}</tr>
+     {% endfor %}
+    </tbody>
+   
+  </table>
+
+   <button type="button" class="btn btn-primary float-end" onclick="printTable()">Print Table</button>
+ 
+</div>
+  </div>
+</div>
+</div>
+
+
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+ <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+<script>
+  // Second form variables
+let collegeName = document.getElementById("collegeName");
+let inter = document.getElementById("inter");
+let interMarks = document.getElementById("interMarks");
+let passInter = document.getElementById("passInter");
+let schoolName = document.getElementById("schoolName");
+let matric = document.getElementById("matric");
+let matricMarks = document.getElementById("matricMarks");
+let passMatric = document.getElementById("passMatric");
+let curricula = document.getElementById("Curricula");
+let scholarshipYes = document.getElementById("Scholarship");
+let scholarshipNo = document.getElementById("Scholarship");
+let birth = document.getElementById("birth");
+let income = document.getElementById("Income");
+let interests = document.getElementById("interests");
+let skillsProgramming = document.getElementById("skillsProgramming");
+let skillsWriting = document.getElementById("skillsWriting");
+let skillsDrawing = document.getElementById("skillsDrawing");
+let skillsCrafts = document.getElementById("skillsCrafts");
+
+let table2 = document.getElementById("table2");
+let validationMessage2;
+
+
+function validate1() {
+  {
+    if (document.getElementById("collegeName").value == "") {
+      // alert("Father's name is required");
+      document.getElementById("error20").innerHTML =
+        "College name is required ";
+      document.getElementById("collegeName").focus();
+      return false;
+    } else {
+      document.getElementById("error20").innerHTML = "";
+    }
+
+    let e = document.getElementById("inter");
+    let interSubject = e.options[e.selectedIndex].value;
+    console.log(interSubject);
+
+    if (interSubject == -1) {
+      // alert("Please select a Course ");
+      document.getElementById("error21").innerHTML = "Please select a Course";
+      document.getElementById("inter").focus();
+      return false;
+    } else {
+      document.getElementById("error21").innerHTML = "";
+    }
+    if (document.getElementById("interMarks").value == "") {
+      // alert("Please provide a pincode in the format ######.");
+      document.getElementById("error22").innerHTML =
+        "Please provide your marks. ";
+      document.getElementById("interMarks").focus();
+      console.log(document.getElementById("interMarks").value);
+      return false;
+    } else {
+      document.getElementById("error22").innerHTML = "";
+    }
+    if (document.getElementById("passInter").value == "") {
+      // alert("Father's name is required");
+      document.getElementById("error23").innerHTML = "passing year required";
+      document.getElementById("passInter").focus();
+      return false;
+    } else {
+      document.getElementById("error23").innerHTML = "";
+    }
+
+    if (document.getElementById("schoolName").value == "") {
+      // alert("Father's name is required");
+      document.getElementById("error24").innerHTML = "School name is required ";
+      document.getElementById("schoolName").focus();
+      return false;
+    } else {
+      document.getElementById("error24").innerHTML = "";
+    }
+
+    let e1 = document.getElementById("matric");
+    let matricSubject = e1.options[e1.selectedIndex].value;
+    console.log(matricSubject);
+
+    if (matricSubject == -1) {
+      // alert("Please select a Course ");
+      document.getElementById("error25").innerHTML = "Please select a Course";
+      document.getElementById("matric").focus();
+      return false;
+    } else {
+      document.getElementById("error25").innerHTML = "";
+    }
+    if (document.getElementById("matricMarks").value == "") {
+      // alert("Please provide a pincode in the format ######.");
+      document.getElementById("error26").innerHTML =
+        "Please provide your marks. ";
+      document.getElementById("matricMarks").focus();
+      console.log(document.getElementById("matricMarks").value);
+      return false;
+    } else {
+      document.getElementById("error26").innerHTML = "";
+    }
+    if (document.getElementById("passMatric").value == "") {
+      // alert("Father's name is required");
+      document.getElementById("error27").innerHTML = "passing year required";
+      document.getElementById("passMatric").focus();
+      return false;
+    } else {
+      document.getElementById("error27").innerHTML = "";
+    }
+
+    acceptData2();
+    // clearFormFields1();
+  
+    return true;
+    
+  }
+}
+
+
+// let data2 = [];
+// // second form accept data
+// let acceptData2 = () => {
+//   data2.push({
+//     collegeName: collegeName.value,
+//     inter: inter.value,
+//     interMarks: interMarks.value,
+//     passInter: passInter.value,
+//     schoolName: schoolName.value,
+//     matric: matric.value,
+//     matricMarks: matricMarks.value,
+//     passMatric: passMatric.value,
+//     curricula: curricula.value,
+//     scholarship: scholarshipYes.checked ? "Yes" : "No",
+//     // scholarshipYes: scholarshipYes.checked ? scholarshipYes.value : "",
+//     // scholarshipNo: scholarshipNo.checked ? scholarshipNo.value : "",
+//     birth: birth.value,
+//     income: income.value,
+//     interests: interests.value,
+//     skills: [
+//       skillsProgramming.checked ? "Programming" : "",
+//       skillsWriting.checked ? "Writing" : "",
+//       skillsDrawing.checked ? "Drawing" : "",
+//       skillsCrafts.checked ? "Crafts" : "",
+//     ],
+//   });
+
+//   localStorage.setItem("data2", JSON.stringify(data2));
+//   createTable2();
+// };
+// let createTable2 = () => {
+//   tabel2.innerHTML = "";
+//   data2.forEach((x, y) => {
+//     let rowId = `row2_${y}`;
+//     tabel2.innerHTML += `
+//             <tr id=${rowId}>
+//                 <th scope="row">${y+1}</th>
+//                 <td>${x.collegeName}</td>
+//                 <td>${x.inter}</td>
+//                 <td>${x.interMarks}</td>
+//                 <td>${x.passInter}</td>
+//                 <td>${x.schoolName}</td>
+//                 <td>${x.matric}</td>
+//                 <td>${x.matricMarks}</td>
+//                 <td>${x.passMatric}</td>
+//                 <td>${x.curricula}</td>
+//                 <td>${x.scholarship}</td>
+//                 <td>${x.birth}</td>
+//                 <td>${x.income}</td>
+//                 <td>${x.interests}</td>
+//                 <td>${x.skills.join(", ")}</td>
+//                 <td class="tb-butn">
+//                     <button type="button" class="btn btn-primary mb-2" onclick="editRow2('${rowId}')">Update</button>
+//                     <button type="button" class="btn btn-danger" onclick="deleteRow2('${rowId}')">Delete</button>
+//                     <!-- Add more buttons or actions as needed -->
+//                 </td>
+//             </tr>
+//         `;
+//   });
+// };
+
+
+
+
+
+// const urlParams = new URLSearchParams(window.location.search);
+// const parentId = urlParams.get("id");
+// let data2 = [];
+// second form accept data
+// let acceptData2 = () => {
+//   data2.push({
+//     key: parentId,
+//     collegeName: collegeName.value,
+//     inter: inter.value,
+//     interMarks: interMarks.value,
+//     passInter: passInter.value,
+//     schoolName: schoolName.value,
+//     matric: matric.value,
+//     matricMarks: matricMarks.value,
+//     passMatric: passMatric.value,
+//     curricula: curricula.value,
+//     scholarship: scholarshipYes.checked ? "Yes" : "No",
+//     // scholarshipYes: scholarshipYes.checked ? scholarshipYes.value : "",
+//     // scholarshipNo: scholarshipNo.checked ? scholarshipNo.value : "",
+//     birth: birth.value,
+//     income: income.value,
+//     interests: interests.value,
+//     skills: [
+//       skillsProgramming.checked ? "Programming" : "",
+//       skillsWriting.checked ? "Writing" : "",
+//       skillsDrawing.checked ? "Drawing" : "",
+//       skillsCrafts.checked ? "Crafts" : "",
+//     ],
+//   });
+
+//   localStorage.setItem("data2", JSON.stringify(data2));
+//   createTable2();
+// };
+// let createTable2 = () => {
+//   tabel2.innerHTML = "";
+
+//   data2.forEach((x, y) => {
+//     let childRowId = `${x.parentId}_details_${y}`;
+//     let rowId = `row2_${y}`;
+//     x.parentId = rowId;
+//     tabel2.innerHTML += `
+//             <tr id=${childRowId}>
+//                 <th scope="row">${y + 1}</th>
+//                 <td>${x.key}</td>
+//                 <td>${x.collegeName}</td>
+//                 <td>${x.inter}</td>
+//                 <td>${x.interMarks}</td>
+//                 <td>${x.passInter}</td>
+//                 <td>${x.schoolName}</td>
+//                 <td>${x.matric}</td>
+//                 <td>${x.matricMarks}</td>
+//                 <td>${x.passMatric}</td>
+//                 <td>${x.curricula}</td>
+//                 <td>${x.scholarship}</td>
+//                 <td>${x.birth}</td>
+//                 <td>${x.income}</td>
+//                 <td>${x.interests}</td>
+//                 <td>${x.skills.join(", ")}</td>
+//                 <td class="tb-butn">
+//                     <button type="button" class="btn btn-primary mb-2" onclick="editRow2('${rowId}')">Update</button>
+//                     <button type="button" class="btn btn-danger" onclick="deleteRow2('${rowId}')">Delete</button>
+                   
+//                 </td>
+//             </tr>
+//         `;
+//   });
+// };
+
+
+
+
+let data2 = [];
+
+// second form accept data
+let acceptData2 = () => {
+  const urlParams = new URLSearchParams(window.location.search);
+  const parentId = urlParams.get("id");
+
+  data2.push({
+    key: parentId,
+    collegeName: collegeName.value,
+    inter: inter.value,
+    interMarks: interMarks.value,
+    passInter: passInter.value,
+    schoolName: schoolName.value,
+    matric: matric.value,
+    matricMarks: matricMarks.value,
+    passMatric: passMatric.value,
+    curricula: curricula.value,
+    scholarship: scholarshipYes.checked ? "Yes" : "No",
+    // scholarshipYes: scholarshipYes.checked ? scholarshipYes.value : "",
+    // scholarshipNo: scholarshipNo.checked ? scholarshipNo.value : "",
+    birth: birth.value,
+    income: income.value,
+    interests: interests.value,
+    skills: [
+      skillsProgramming.checked ? "Programming" : "",
+      skillsWriting.checked ? "Writing" : "",
+      skillsDrawing.checked ? "Drawing" : "",
+      skillsCrafts.checked ? "Crafts" : "",
+    ],
+  });
+
+  localStorage.setItem("data2", JSON.stringify(data2));
+  createTable2();
+};
+
+let createTable2 = () => {
+  table2.innerHTML = "";
+
+  data2.forEach((x, y) => {
+    let childRowId = `row2_${y}`;
+    table2.innerHTML += `
+      <tr id=${childRowId}>
+        <th scope="row">${y + 1}</th>
+               
+                <td>${x.collegeName || ""}</td>
+                <td>${x.inter || ""}</td>
+                <td>${x.interMarks || ""}</td>
+                <td>${x.passInter || ""}</td>
+                <td>${x.schoolName || ""}</td>
+                <td>${x.matric || ""}</td>
+                <td>${x.matricMarks || ""}</td>
+                <td>${x.passMatric || ""}</td>
+                <td>${x.curricula || ""}</td>
+                <td>${x.scholarship || ""}</td>
+                <td>${x.birth || ""}</td>
+                <td>${x.income || ""}</td>
+                <td>${x.interests || ""}</td>
+                <td>${x.skills.join(", ") || ""}</td>
+                <td class="tb-butn">
+                    <button type="button" id="updatebtn2" class="btn3 bg-body-secondary" onclick="editRow2('${childRowId}')"><i class="bi bi-pencil-square" title="Click to Edit Row"></i></button>
+                    <button type="button" class="btn4 " onclick="deleteRow2('${childRowId}')"><i class="bi bi-trash3-fill" title="Click to Delete Row"></i></button>
+                   
+                </td>
+      </tr>`;
+  });
+  clearFormFields2();
+};
+
+let editRow2 = (childRowId) => {
+  console.log("edit1");
+  document
+    .getElementById("submitBtn2")
+    .setAttribute("data2-row-id", childRowId);
+ console.log("edit2");
+    document.getElementById("updatebtn2").addEventListener("click", function(){
+      console.log("edit3");
+      let row2Index = parseInt(childRowId.split("_")[1]);
+      let rowData2=data2[row2Index]
+      console.log("update1", rowData2);
+      collegeName.value = rowData2.collegeName;
+      inter.value = rowData2.inter;
+      interMarks.value = rowData2.interMarks;
+      passInter.value = rowData2.passInter;
+      schoolName.value = rowData2.schoolName;
+      matric.value = rowData2.matric;
+      matricMarks.value = rowData2.matricMarks;
+      passMatric.value = rowData2.passMatric;
+      curricula.value = rowData2.curricula;
+      scholarshipYes.checked = rowData2.scholarshipYes==="yes";
+      scholarshipNo.checked = rowData2.scholarshipNo==='no';
+      birth.value = rowData2.birth;
+      income.value = rowData2.income;
+      interests.value =  rowData2.interests;
+      skillsProgramming.checked=rowData2.skillsProgramming==="Programming";
+      skillsWriting.checked=rowData2.skillsWriting==="Writing";
+
+      skillsDrawing.checked=rowData2.skills==="Drawing";
+
+      skillsCrafts.checked=rowData2.skillsCrafts==="Crafts";
+
+      document.getElementById("submitBtn2").innerText = "Save";
+      document.getElementById("submitBtn2").setAttribute("onclick","saveChanges2()");
+      console.log("update3");
+    })
+};
+
+let saveChanges2=()=>{
+let rowid2 = document.getElementById("submitBtn2").getAttribute("data2-row-id");
+if (rowid2) {
+  let row2Index=parseInt(rowid2.split("_")[1])
+  data2[row2Index] = {
+
+    collegeName: collegeName.value,
+    inter: inter.value,
+    interMarks: interMarks.value,
+    passInter: passInter.value,
+    schoolName: schoolName.value,
+    matric: matric.value,
+    matricMarks: matricMarks.value,
+    passMatric: passMatric.value,
+    curricula: curricula.value,
+    scholarship: scholarshipYes.checked ? "Yes" : "No",
+  
+    birth: birth.value,
+    income: income.value,
+    interests: interests.value,
+    skills: [
+      skillsProgramming.checked ? "Programming" : "",
+      skillsWriting.checked ? "Writing" : "",
+      skillsDrawing.checked ? "Drawing" : "",
+      skillsCrafts.checked ? "Crafts" : "",
+    ],
+  };
+
+}else{
+  data2.push({
+    key: parentId,
+    collegeName: collegeName.value,
+    inter: inter.value,
+    interMarks: interMarks.value,
+    passInter: passInter.value,
+    schoolName: schoolName.value,
+    matric: matric.value,
+    matricMarks: matricMarks.value,
+    passMatric: passMatric.value,
+    curricula: curricula.value,
+    scholarship: scholarshipYes.checked ? "Yes" : "No",
+   
+    birth: birth.value,
+    income: income.value,
+    interests: interests.value,
+    skills: [
+      skillsProgramming.checked ? "Programming" : "",
+      skillsWriting.checked ? "Writing" : "",
+      skillsDrawing.checked ? "Drawing" : "",
+      skillsCrafts.checked ? "Crafts" : "",
+    ],
+  });
+        
+
+       
+}
+clearFormFields2();
+   console.log("clearform1");
+  document.getElementById("submitBtn2").innerText = "Submit";
+document.getElementById("submitBtn2").removeAttribute("data2-row-id");
+  localStorage.setItem("data2", JSON.stringify(data2));
+  createTable2();
+}
+let clearFormFields2=()=>{
+  console.log("clearform2");
+  collegeName.value="";
+  inter.value="";
+ interMarks.value="";
+     passInter.value="";
+schoolName.value="";
+matric.value="";
+    matricMarks.value="";
+passMatric.value="";
+ curricula.value="";
+     scholarshipYes.checked =false;
+ 
+   birth.value="";
+ income.value="";
+   interests.value="";
+    skills: [
+      skillsProgramming.checked =false,
+      skillsWriting.checked =false ,
+           skillsDrawing.checked =false,
+      skillsCrafts.checked =false
+    ]
+     
+};
+const modalClose1 = () => {
+  $("#exampleModalCenter").modal("hide");
+};
+ 
+let deleteRow2 = (childRowId) => {
+  let rowIndex = parseInt(childRowId.split("_")[1]);
+  let modal = document.getElementById("exampleModalCenter");
+  console.log(modal);
+   modal.innerHTML = ` <div class="modal-dialog modal-dialog-centered"   role="document">
+    <div class="modal-content" style="background-color: #192a56">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle" style="color: #ffff; font-weight: bold;"></h5>
+        
+        <button type="button" onclick="modalClose1()"class="btn-close" aria-label="Close"></button>
+      </div>
+      <div class="modal-body" id="modal-body" style="color: #ffff ;">
+        
+      </div>
+      <div class="modal-footer ">
+        
+        <button  id="delbtn2" type="button"  style="display: none;" class="btn btn-primary">Yes</button>  <button  id="updatebtn2" type="button"  style="display: none;" class="btn btn-primary">Yes</button>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal" id="btnDelete2" onclick="modalClose1()"></button>
+      
+      </div>
+    </div>
+  </div>`;
+$("#exampleModalCenter").modal("show");
+// document.getElementById("updatebtn").style.display = "none";
+let delbtn3 = document.getElementById("delbtn2");
+delbtn3.style.display = "block";
+document.getElementById("exampleModalLongTitle").innerHTML =
+  "Row Delete Notification!";
+document.getElementById("modal-body").innerHTML =
+  "Are You Sure to Delete This Row";
+
+ document.getElementById("btnDelete2").innerHTML = "No";
+ document.getElementById("delbtn2").addEventListener("click", function () {
+
+
+ 
+   data2.splice(rowIndex, 1);
+  
+   localStorage.setItem("data2", JSON.stringify(data2));
+  
+   createTable2();
+
+   
+ });
+modalClose1();
+  // // alert("delete");
+  // let confir = confirm("ARe you sure to delete this row")
+  // console.log(confir);
+  // if (confir) {data2.splice(rowIndex, 1);
+  // localStorage.setItem("data2", JSON.stringify(data2));
+  // createTable2();}
+};
+function resetForm1() {
+  document.getElementById("submitBtn2").innerText = "Submit";
+  document
+    .getElementById("submitBtn2")
+    .setAttribute("onclick", " return validate1()");
+
+  console.log("reset");
+}
+
+
+
+
+
+(() => {
+  data2 = JSON.parse(localStorage.getItem("data2")) || [];
+  console.log(data2);
+  createTable2();
+})();
+
+</script>
+
+<!-- Then include the script where you are using data2 -->
+<script>
+  // main doc variables
+let fullName = document.getElementById("name");
+let fatherName = document.getElementById("fatherName");
+let PostAdress = document.getElementById("PostAdress");
+let personalAddress = document.getElementById("perAddress");
+let genderMale = StudenRegistrationForm.Gender[0];
+let genderFemale = StudenRegistrationForm.Gender[1];
+let course = document.getElementById("Course");
+
+let city = document.getElementById("City");
+
+let province = document.getElementById("Province");
+
+let pincode = document.getElementById("pincode");
+let email = document.getElementById("emailId");
+let phoneNumber = document.getElementById("phoneNumber");
+let table = document.getElementById("tabel");
+let validationMessage;
+
+// second form variables
+
+function validate() {
+  {
+    if (document.getElementById("name").value == "") {
+      // alert("Name is required");
+      document.getElementById("error1").innerHTML = "Full name is required ";
+      document.getElementById("name").focus();
+      return false;
+    } else {
+      document.getElementById("error1").innerHTML = "";
+    }
+    if (document.getElementById("fatherName").value == "") {
+      // alert("Father's name is required");
+      document.getElementById("error2").innerHTML =
+        "Father's name is required ";
+      document.getElementById("fatherName").focus();
+      return false;
+    } else {
+      document.getElementById("error2").innerHTML = "";
+    }
+    if (document.getElementById("PostAdress").value == "") {
+      // alert("Postal Address is required");
+      document.getElementById("error3").innerHTML =
+        "Postal Address is required ";
+
+      document.getElementById("PostAdress").focus();
+      return false;
+    } else {
+      document.getElementById("error3").innerHTML = "";
+    }
+    if (document.getElementById("perAddress").value == "") {
+      // alert("Personsal Address is required");
+      document.getElementById("error4").innerHTML =
+        "Personsal Address is required ";
+      document.getElementById("perAddress").focus();
+      return false;
+    } else {
+      document.getElementById("error4").innerHTML = "";
+    }
+    if (
+      StudenRegistrationForm.Gender[0].checked == false &&
+      StudenRegistrationForm.Gender[1].checked == false
+    ) {
+      // alert("Gender is required");
+      document.getElementById("error5").innerHTML = "Gender is required";
+      document.getElementById("Gender").focus();
+      return false;
+    } else {
+      document.getElementById("error5").innerHTML = "";
+    }
+
+    let e = document.getElementById("Course");
+    let Course1 = e.options[e.selectedIndex].value;
+    console.log(Course1);
+
+    if (Course1 == -1) {
+      // alert("Please select a Course ");
+      document.getElementById("error6").innerHTML = "Please select a Course";
+      document.getElementById("Course").focus();
+      return false;
+    } else {
+      document.getElementById("error6").innerHTML = "";
+    }
+    let e1 = document.getElementById("City");
+    let City1 = e1.options[e1.selectedIndex].value;
+    console.log(City1);
+
+    if (City1 == -1) {
+      // alert("Please select a City ");
+      document.getElementById("error7").innerHTML = "Please select a City ";
+      document.getElementById("City").focus();
+      return false;
+    } else {
+      document.getElementById("error7").innerHTML = "";
+    }
+
+    let e2 = document.getElementById("Province");
+    let Province1 = e2.options[e2.selectedIndex].value;
+    console.log(Province1);
+
+    if (Province1 == -1) {
+      // alert("Please select a Province ");
+      document.getElementById("error8").innerHTML = "Please select a City ";
+      document.getElementById("Province").focus();
+      return false;
+    } else {
+      document.getElementById("error8").innerHTML = "";
+    }
+
+    if (
+      document.getElementById("pincode").value == "" ||
+      document.getElementById("pincode").value.length != 6
+    ) {
+      // alert("Please provide a pincode in the format ######.");
+      document.getElementById("error9").innerHTML =
+        "Please provide a pincode in the format ######. ";
+      document.getElementById("pincode").focus();
+      console.log(document.getElementById("pincode").value);
+      return false;
+    } else {
+      document.getElementById("error9").innerHTML = "";
+    }
+    var email = document.StudenRegistrationForm.emailId.value;
+    atpos = email.indexOf("@");
+    dotpos = email.lastIndexOf(".");
+    if (email == "" || atpos < 1 || dotpos - atpos < 2) {
+      // alert("Please enter correct email ID");
+      document.getElementById("error10").innerHTML =
+        "Please enter correct email ID ";
+      document.StudenRegistrationForm.emailId.focus();
+      return false;
+    } else {
+      document.getElementById("error10").innerHTML = "";
+    }
+
+    if (
+      document.StudenRegistrationForm.phoneNumber.value == "" ||
+      document.StudenRegistrationForm.phoneNumber.value.length != 11
+    ) {
+      // alert("Please provide a Mobile No in the format 123.");
+      document.getElementById("error11").innerHTML =
+        "Please provide a Mobile No in the format 123.";
+
+      document.StudenRegistrationForm.phoneNumber.focus();
+      return false;
+    } else {
+      document.getElementById("error11").innerHTML = "";
+    }
+  }
+
+  let delbtn2 = document.getElementById("delbtn");
+  delbtn2.style.display = "none";
+  let updatebtn = document.getElementById("updatebtn");
+  updatebtn.style.display = "none";
+  document.getElementById("exampleModalLongTitle").innerHTML =
+    "Form Submit Notification!";
+  document.getElementById("modal-body").innerHTML = "This Form Has been Submit";
+  document.getElementById("btnDelete").innerHTML = "Close";
+
+  $("#exampleModalCenter").modal("show");
+
+  acceptData();
+  clearFormFields();
+  return true;
+}
+
+const modalClose = () => {
+  $("#exampleModalCenter").modal("hide");
+};
+
+// form1 accept data
+// let data = [];
+
+// let acceptData = () => {
+//   data.push({
+//     fullName: fullName.value,
+//     fatherName: fatherName.value,
+//     postalAdress: postalAdress.value,
+//     personalAddress: personalAddress.value,
+//     genderMale: genderMale.checked ? genderMale.value : "",
+//     genderFemale: genderFemale.checked ? genderFemale.value : "",
+//     course: course.value,
+//     city: city.value,
+//     province: province.value,
+//     pincode: pincode.value,
+//     email: email.value,
+//     phoneNumber: phoneNumber.value,
+//   });
+
+//   localStorage.setItem("data", JSON.stringify(data));
+
+//   console.log(data);
+//   createTable();
+// };
+
+// let createTable = () => {
+//   tabel.innerHTML= "";
+
+//   let combinedData = [...data, ...data2];
+//   combinedData.forEach((mergedObject, index) => {
+//     // mergedObject = { ...mergedObject, ...object };
+
+//     let rowId = `row_${index}`;
+//     let collapseId = `collapse_${rowId}`;
+
+//     tabel.innerHTML += `
+//       <tr id=${rowId}>
+//           <th scope="row">${index + 1}</th>
+//           <td>${mergedObject.fullName}</td>
+//           <td>${mergedObject.fatherName}</td>
+//           <td>${mergedObject.postalAddress}</td>
+//           <td>${mergedObject.personalAddress}</td>
+//           <td>${mergedObject.genderMale ? "Male" : "Female"}</td>
+//           <td>${mergedObject.course}</td>
+//           <td>${mergedObject.city}</td>
+//           <td>${mergedObject.province}</td>
+//           <td>${mergedObject.pincode}</td>
+//           <td>${mergedObject.email}</td>
+//           <td>${mergedObject.phoneNumber}</td>
+//           <td class="tb-butn">
+//               <button type="button" class="btn btn-primary mb-2" onclick="editRow('${rowId}')">Update</button>
+//               <button type="button" class="btn btn-danger" onclick="deleteRow('${rowId}')">Delete</button>
+//               <a href="detailsForm.html" target="_blank"><button type="button" class="btn btn-danger">Add more</button></a>
+//               <button type="button" class="btn btn-danger" data-bs-toggle="collapse" href="#${collapseId}" role="button" aria-expanded="false" aria-controls="${collapseId}">View more</button>
+//           </td>
+//       </tr>`;
+
+//     // Add the collapse row for the second form data
+//     tabel.innerHTML += `
+//     <tr >
+//             <td colspan="15" class="p-0">
+//                 <div class="collapse" id="${collapseId}">
+//                     <div class="card card-body">
+//                         <table class="table">
+//                             <thead>
+//                                 <tr>
+//                                    <th scope="col">#</th>
+//                                         <th scope="col">College Name</th>
+//                                         <th scope="col">Intermediate</th>
+//                                         <th scope="col">Intermediate Marks</th>
+//                                         <th scope="col">Passing Year (Intermediate)</th>
+//                                         <th scope="col">School Name</th>
+//                                         <th scope="col">Matric</th>
+//                                         <th scope="col">Matric Marks</th>
+//                                         <th scope="col">Passing Year (Matric)</th>
+//                                         <th scope="col">Curricula</th>
+//                                         <th scope="col">Scholarship</th>
+//                                         <th scope="col">Date of Birth</th>
+//                                         <th scope="col">Family Monthly Income</th>
+//                                         <th scope="col">Interests</th>
+//                                         <th scope="col">Skills/Talents</th>
+//                                         <th scope="col">Actions</th>
+//                                 </tr>
+//                             </thead>
+//                             <tbody>
+//                                 <tr id="${rowId}_details">
+//                                     <th scope="row">1</th>
+//                                         <td>${mergedObject.collegeName}</td>
+//                                         <td>${mergedObject.inter}</td>
+//                                         <td>${mergedObject.interMarks}</td>
+//                                         <td>${mergedObject.passInter}</td>
+//                                         <td>${mergedObject.schoolName}</td>
+//                                         <td>${mergedObject.matric}</td>
+//                                         <td>${mergedObject.matricMarks}</td>
+//                                         <td>${mergedObject.passMatric}</td>
+//                                         <td>${mergedObject.curricula}</td>
+//                                         <td>${mergedObject.scholarship}</td>
+//                                         <td>${mergedObject.birth}</td>
+//                                         <td>${mergedObject.income}</td>
+//                                         <td>${mergedObject.interests}</td>
+//                                         <td>${
+//                                           mergedObject.skills
+//                                             ? mergedObject.skills.join(", ")
+//                                             : ""
+//                                         }</td>
+//                                     <td class="tb-butn">
+//                                         <button type="button" class="btn btn-primary mb-2" onclick="editRow2('${rowId}')">Update</button>
+//                                         <button type="button" class="btn btn-danger" onclick="deleteRow2('${rowId}')">Delete</button>
+//                                     </td>
+//                                 </tr>
+//                             </tbody>
+//                         </table>
+//                     </div>
+//                 </div>
+//             </td>
+//   `;
+//   });
+
+// };
+
+let generateid = () => {
+  // Generate a unique key using a combination of timestamp and random number
+  return `${Date.now()}_${Math.floor(Math.random() * 1000)}`;
+};
+
+// form1 accept data
+let data = [];
+// Generate a unique key for the parent row
+let parentid = generateid();
+
+let acceptData = () => {
+  data.push({
+    id: parentid,
+    fullName: fullName.value,
+    fatherName: fatherName.value,
+    PostAdress: PostAdress.value,
+    personalAddress: personalAddress.value,
+    genderMale: genderMale.checked ? genderMale.value : "",
+    genderFemale: genderFemale.checked ? genderFemale.value : "",
+    course: course.value,
+    city: city.value,
+    province: province.value,
+    pincode: pincode.value,
+    email: email.value,
+    phoneNumber: phoneNumber.value,
+  });
+
+  localStorage.setItem("data", JSON.stringify(data));
+
+  // console.log(data);
+  createTable();
+};
+
+let openForm2 = (parentid) => {
+  // Pass the parent ID to the form 2 HTML file
+  window.open(`detailsForm.html?id=${parentid}`, "_blank");
+};
+let updatRow2 = (colapsRowId) => {
+  const newTab = window.open("detailsForm.html", "_blank");
+
+  newTab.onload = () => {
+    newTab.editRow2(colapsRowId);
+  };
+
+  console.log("edit");
+};
+
+// let createTable = () => {
+//   // debugger
+//   table.innerHTML = "";
+//   let collapseId;
+//   let combinedData = [...data, ...data2];
+//   // debugger
+//   combinedData.forEach((mergedObject, index) => {
+//     console.log("merge", mergedObject);
+
+//     console.log("combinedData", combinedData);
+//     let rowId = `row_${index}`;
+//     collapseId = `collapse_${rowId}`;
+//     let parentid = mergedObject.id;
+//     // const filteredData2 = data2.filter((x) => x.parentId === rowId);
+
+//     if (mergedObject.fullName !== undefined) {
+//       console.log("mergedObject.fullName", mergedObject.fullName);
+//       table.innerHTML += `
+//       <tr id=${rowId}>
+//           <th scope="row">${index + 1}</th>
+
+//           <td>${mergedObject.fullName || ""}</td>
+//           <td>${mergedObject.fatherName || ""}</td>
+//           <td>${mergedObject.PostAdress || ""}</td>
+//           <td>${mergedObject.personalAddress || ""}</td>
+//           <td>${mergedObject.genderMale ? "Male" : "Female" || ""}</td>
+//           <td>${mergedObject.course || ""}</td>
+//           <td>${mergedObject.city || ""}</td>
+//           <td>${mergedObject.province || ""}</td>
+//           <td>${mergedObject.pincode || ""}</td>
+//           <td>${mergedObject.email || ""}</td>
+//           <td>${mergedObject.phoneNumber || ""}</td>
+//           <td class="tb-butn">
+//               <button type="button" class="btn btn-primary mb-2" onclick="editRow('${rowId}')">Update</button>
+//               <button type="button" class="btn btn-danger" onclick="deleteRow('${rowId}')">Delete</button>
+//               <button type="button" class="btn btn-danger" onclick="  openForm2(parentid); ">Add more</button>
+
+//           </td>
+//       </tr>`;
+//     }
+
+//     console.log("data2", data2);
+//     // <button
+//     //   type="button"
+//     //   class="btn btn-danger"
+//     //   data-bs-toggle="collapse"
+//     //   href="#${collapseId}"
+//     //   role="button"
+//     //   aria-expanded="false"
+//     //   aria-controls="${collapseId}"
+//     // >
+//     //   View more
+//     // </button>;
+//     // Add the collapse row for the second form data
+//     // Filter data2 based on the current parent ID
+
+//     // filteredData2.forEach((childData, childIndex) => {
+//     //   let childRowId = `${rowId}_details_${childIndex}`;
+//     // Add the collapse row for the second form data
+
+//     // <div class="collapse" id="${collapseId}">
+
+//     if (mergedObject.collegeName !== undefined) {
+//       console.log("mergedObject.collegeName:", mergedObject.collegeName);
+
+//       table.innerHTML += `
+//     <tr >
+//             <td colspan="15" class="p-0">
+
+//                 <div  >
+//                     <div class="card card-body">
+//                         <table class="table">
+//                             <thead>
+//                                 <tr>
+//                                    <th scope="col">#</th>
+//                                         <th scope="col">College Name</th>
+//                                         <th scope="col">Intermediate</th>
+//                                         <th scope="col">Intermediate Marks</th>
+//                                         <th scope="col">Passing Year (Intermediate)</th>
+//                                         <th scope="col">School Name</th>
+//                                         <th scope="col">Matric</th>
+//                                         <th scope="col">Matric Marks</th>
+//                                         <th scope="col">Passing Year (Matric)</th>
+//                                         <th scope="col">Curricula</th>
+//                                         <th scope="col">Scholarship</th>
+//                                         <th scope="col">Date of Birth</th>
+//                                         <th scope="col">Family Monthly Income</th>
+//                                         <th scope="col">Interests</th>
+//                                         <th scope="col">Skills/Talents</th>
+//                                         <th scope="col">Actions</th>
+//                                 </tr>
+//                             </thead>
+//                             <tbody>
+//                                 <tr >
+//                                     <th scope="row">${index + 1}</th>
+
+//                                         <td>${
+//                                           mergedObject.collegeName || ""
+//                                         }</td>
+//                                         <td>${mergedObject.inter || ""}</td>
+//                                         <td>${
+//                                           mergedObject.interMarks || ""
+//                                         }</td>
+//                                         <td>${mergedObject.passInter || ""}</td>
+//                                         <td>${
+//                                           mergedObject.schoolName || ""
+//                                         }</td>
+//                                         <td>${mergedObject.matric || ""}</td>
+//                                         <td>${
+//                                           mergedObject.matricMarks || ""
+//                                         }</td>
+//                                         <td>${
+//                                           mergedObject.passMatric || ""
+//                                         }</td>
+//                                         <td>${mergedObject.curricula || ""}</td>
+//                                         <td>${
+//                                           mergedObject.scholarship || ""
+//                                         }</td>
+//                                         <td>${mergedObject.birth || ""}</td>
+//                                         <td>${mergedObject.income || ""}</td>
+//                                         <td>${mergedObject.interests || ""}</td>
+//                                         <td>${
+//                                           mergedObject.skills
+//                                             ? mergedObject.skills.join(", ")
+//                                             : ""
+//                                         }</td>
+//                                     <td class="tb-butn">
+//                                         <button type="button" class="btn btn-primary mb-2" onclick="editRow2('')">Update</button>
+//                                         <button type="button" class="btn btn-danger" onclick="deleteRow2('')">Delete</button>
+//                                     </td>
+//                                 </tr>
+//                             </tbody>
+//                         </table>
+//                     </div>
+//                 </div>
+//             </td>
+//   `;
+//     }
+
+//     // });
+//   });
+// };
+
+let toggleIcon = (button) => {
+  let icon = button.querySelector("i");
+
+  icon.classList.toggle("bi-plus-lg");
+  icon.classList.toggle("bi-dash");
+};
+let createTable = () => {
+  table.innerHTML = "";
+  // collapseTables.innerHTML = "";
+
+  // Loop through data and data2 simultaneously
+  for (let i = 0; i < Math.max(data.length, data2.length); i++) {
+    let mergedObject1 = data[i] || {};
+    let mergedObject2 = data2[i] || {};
+
+    let rowId = `row_${i}`;
+    let collapseId = `collapse_${rowId}`;
+    let parentid = mergedObject1.id || mergedObject2.key;
+
+    // Main row
+    if (Object.keys(mergedObject1).length > 0) {
+      table.innerHTML += `
+        <tr id=${rowId}>
+          <th scope="row">${
+            i + 1
+          } <button type="button" class="btn22 " id="btn22" data-bs-toggle="collapse" href="#${collapseId}" role="button" aria-expanded="false" aria-controls="${collapseId}" onclick="toggleIcon(this)" title="Click to Expand/Collapse"><i class="bi bi-plus-lg"></i></button></th>
+          
+         
+          
+          <td>${mergedObject1.fullName || ""}</td>
+          <td>${mergedObject1.fatherName || ""}</td>
+          <td>${mergedObject1.PostAdress || ""}</td>
+          <td>${mergedObject1.personalAddress || ""}</td>
+          <td>${mergedObject1.genderMale ? "Male" : "Female" || ""}</td>
+          <td>${mergedObject1.course || ""}</td>
+          <td>${mergedObject1.city || ""}</td>
+          <td>${mergedObject1.province || ""}</td>
+          <td>${mergedObject1.pincode || ""}</td>
+          <td>${mergedObject1.email || ""}</td>
+          <td>${mergedObject1.phoneNumber || ""}</td>
+
+          <td class="tb-butn">
+            <button type="button" class="btn1 " onclick="editRow('${rowId}')"><i class="bi bi-pencil-square" title="Click to Edit Row"></i></button>
+            <button type="button" class="btn2 " onclick="deleteRow('${rowId}')"><i class="bi bi-trash3-fill" title="Click to Delete Row"></i></button>
+            <button type="button" class="btn btn-info my-1" onclick="openForm2('${parentid}')">Add more</button>
+           
+          </td>
+        </tr>`;
+    }
+    let colapsRowId;
+    // Collapse row
+    if (Object.keys(mergedObject2).length > 0) {
+      colapsRowId = `row_${i}_details`;
+      table.innerHTML += `
+        <tr id="colapsRowId">
+          <td colspan="15" class="p-0">
+            <div class="collapse" id="${collapseId}">
+              <div class="card card-body">
+                <table class="table">
+                 <tr>
+                                   <th scope="col">#</th>
+                                        <th scope="col">College Name</th>
+                                        <th scope="col">Intermediate</th>
+                                        <th scope="col">Intermediate Marks</th>
+                                        <th scope="col">Passing Year (Intermediate)</th>
+                                        <th scope="col">School Name</th>
+                                        <th scope="col">Matric</th>
+                                        <th scope="col">Matric Marks</th>
+                                        <th scope="col">Passing Year (Matric)</th>
+                                        <th scope="col">Curricula</th>
+                                        <th scope="col">Scholarship</th>
+                                        <th scope="col">Date of Birth</th>
+                                        <th scope="col">Family Monthly Income</th>
+                                        <th scope="col">Interests</th>
+                                        <th scope="col">Skills/Talents</th>
+                                        <th scope="col">Actions</th>
+                                </tr>
+                  <tbody>
+                 
+                      <td scope="row"><b>${i + 1}</b></td>
+                     
+                    <td>${mergedObject2.collegeName || ""}</td>
+                                        <td>${mergedObject2.inter || ""}</td>
+                                        <td>${
+                                          mergedObject2.interMarks || ""
+                                        }</td>
+                                        <td>${
+                                          mergedObject2.passInter || ""
+                                        }</td>
+                                        <td>${
+                                          mergedObject2.schoolName || ""
+                                        }</td>
+                                        <td>${mergedObject2.matric || ""}</td>
+                                        <td>${
+                                          mergedObject2.matricMarks || ""
+                                        }</td>
+                                        <td>${
+                                          mergedObject2.passMatric || ""
+                                        }</td>
+                                        <td>${
+                                          mergedObject2.curricula || ""
+                                        }</td>
+                                        <td>${
+                                          mergedObject2.scholarship || ""
+                                        }</td>
+                                        <td>${mergedObject2.birth || ""}</td>
+                                        <td>${mergedObject2.income || ""}</td>
+                                        <td>${
+                                          mergedObject2.interests || ""
+                                        }</td>
+                                        <td>${
+                                          mergedObject2.skills
+                                            ? mergedObject2.skills.join(", ")
+                                            : ""
+                                        }</td>
+                      <td class="tb-butn">
+                      <button type="button" id="updatebtn2" class="btn3 " onclick="updatRow2('colapsRowId')"><i class="bi bi-pencil-square" title="Click to Edit Row"></i></button>
+                        <button type="button" class="btn4" onclick="deleteRow2('colapsRowId')"><i class="bi bi-trash3-fill" title="Click to Delete Row"></i></button>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </td>
+        </tr>`;
+    }
+  }
+};
+
+let editRow = (rowId) => {
+  document.getElementById("submitBtn").setAttribute("data-row-id", rowId);
+
+  $("#exampleModalCenter").modal("show");
+  let updatebtn = document.getElementById("updatebtn");
+  updatebtn.style.display = "block";
+  let delbtn = document.getElementById("delbtn");
+  delbtn.style.display = "none";
+  document.getElementById("exampleModalLongTitle").innerHTML =
+    "Row Data Update  Notification!";
+  document.getElementById("modal-body").innerHTML =
+    "Are you want to update  data";
+  document.getElementById("btnDelete").innerHTML = "No";
+
+  console.log("update1");
+
+  document.getElementById("updatebtn").addEventListener("click", function () {
+    let rowIndex = parseInt(rowId.split("_")[1]);
+    let rowData = data[rowIndex];
+    console.log("update2");
+    fullName.value = rowData.fullName;
+    fatherName.value = rowData.fatherName;
+    PostAdress.value = rowData.postalAdress;
+    personalAddress.value = rowData.personalAddress;
+
+    genderMale.checked = rowData.genderMale === "male";
+    genderFemale.checked = rowData.genderFemale === "female";
+
+    course.value = rowData.course;
+    city.value = rowData.city;
+    province.value = rowData.province;
+    pincode.value = rowData.pincode;
+    email.value = rowData.email;
+    phoneNumber.value = rowData.phoneNumber;
+    console.log("update3");
+    document.getElementById("submitBtn").innerText = "Save";
+    document
+      .getElementById("submitBtn")
+      .setAttribute("onclick", "saveChanges()");
+    $("#exampleModalCenter").modal("hide");
+    document.getElementById("updatebtn");
+    updatebtn.style.display = "none";
+    console.log("update4");
+  });
+};
+
+let saveChanges = () => {
+  let rowId = document.getElementById("submitBtn").getAttribute("data-row-id");
+
+  $("#exampleModalCenter").modal("show");
+  let delbtn2 = document.getElementById("delbtn");
+  delbtn2.style.display = "none";
+  document.getElementById("exampleModalLongTitle").innerHTML =
+    "  Update Save  Notification!";
+  document.getElementById("modal-body").innerHTML =
+    "Form Data Has Been Updated";
+  document.getElementById("btnDelete").innerHTML = "Close";
+
+  if (rowId) {
+    let rowIndex = parseInt(rowId.split("_")[1]);
+    data[rowIndex] = {
+      fullName: fullName.value,
+      fatherName: fatherName.value,
+      postalAdress: PostAdress.value,
+      personalAddress: personalAddress.value,
+      genderMale: genderMale.checked ? genderMale.value : "",
+      genderFemale: genderFemale.checked ? genderFemale.value : "",
+      course: course.value,
+      city: city.value,
+      province: province.value,
+      pincode: pincode.value,
+      email: email.value,
+      phoneNumber: phoneNumber.value,
+    };
+  } else {
+    data.push({
+      fullName: fullName.value,
+      fatherName: fatherName.value,
+      postalAdress: PostAdress.value,
+      personalAddress: personalAddress.value,
+      genderMale: genderMale.checked ? genderMale.value : "",
+      genderFemale: genderFemale.checked ? genderFemale.value : "",
+      course: course.value,
+      city: city.value,
+      province: province.value,
+      pincode: pincode.value,
+      email: email.value,
+      phoneNumber: phoneNumber.value,
+    });
+  }
+
+  clearFormFields();
+
+  document.getElementById("submitBtn").innerText = "Submit";
+
+  document.getElementById("submitBtn").removeAttribute("data-row-id");
+
+  localStorage.setItem("data", JSON.stringify(data));
+  createTable();
+
+  $("#exampleModalCenter").modal("hide");
+};
+
+let clearFormFields = () => {
+  fullName.value = "";
+  fatherName.value = "";
+  PostAdress.value = "";
+  personalAddress.value = "";
+  genderMale.checked = false;
+  genderFemale.checked = false;
+  course.value = "-1";
+  city.value = "-1";
+  province.value = "-1";
+  pincode.value = "";
+  email.value = "";
+  phoneNumber.value = "";
+};
+
+// let deleteRow = (rowId) => {
+//   let rowIndex = parseInt(rowId.split("_")[1]);
+//   $("#exampleModalCenter").modal("show");
+//   document.getElementById("updatebtn");
+//   updatebtn.style.display = "none";
+//   let delbtn2 = document.getElementById("delbtn");
+//   delbtn2.style.display = "block";
+//   document.getElementById("exampleModalLongTitle").innerHTML =
+//     "Row Delete Notification!";
+//   document.getElementById("modal-body").innerHTML =
+//     "Are You Sure to Delete This Row";
+//   document.getElementById("btnDelete").innerHTML = "No";
+//   document.getElementById("delbtn").addEventListener("click", function () {
+
+//     data.splice(rowIndex, 1);
+//     localStorage.setItem("data", JSON.stringify(data));
+//     createTable();
+//     $("#exampleModalCenter").modal("hide");
+//   });
+// };
+// let deleteRow = (rowId) => {
+//   let rowIndex = parseInt(rowId.split("_")[1]);
+
+//   // Check if there is a corresponding collapse row
+//   let collapseRowId = `row_${rowIndex}_details`;
+//   let collapseRow = document.getElementById(collapseRowId);
+
+//   if (collapseRow) {
+//     // If the collapse row exists, remove it
+//     // collapseRow.parentNode.removeChild(collapseRow);
+//   document.getElementById("modal-body").innerHTML =
+//     "there is a colapse row exist";
+//     console.log("collapseRow", collapseRow);
+//   }
+
+//   // Show the confirmation modal
+//   $("#exampleModalCenter").modal("show");
+
+//   // Hide the update button
+//   document.getElementById("updatebtn").style.display = "none";
+
+//   // Show the delete button
+//   let delbtn2 = document.getElementById("delbtn");
+//   delbtn2.style.display = "block";
+
+//   // Set modal title and body
+//   document.getElementById("exampleModalLongTitle").innerHTML =
+//     "Row Delete Notification!";
+//   document.getElementById("modal-body").innerHTML =
+//     "Are You Sure to Delete This Row";
+
+//   // Set the modal button text
+//   document.getElementById("btnDelete").innerHTML = "No";
+
+//   // Add click event listener to delete button
+//   document.getElementById("delbtn").addEventListener("click", function () {
+//   data.splice(rowIndex, 1);
+
+//   // Remove the associated collapse row from the data2 array
+//   data2.splice(rowIndex, 1);
+
+//   // Update local storage
+//   localStorage.setItem("data", JSON.stringify(data));
+//   localStorage.setItem("data2", JSON.stringify(data2));
+
+//   // Update the tables
+//   createTable();
+//   createTable2();
+
+//     // Hide the confirmation modal
+//     $("#exampleModalCenter").modal("hide");
+//   });
+// };
+
+let deleteRow = (rowId) => {
+  let rowIndex = parseInt(rowId.split("_")[1]);
+
+  $("#exampleModalCenter").modal("show");
+  document.getElementById("updatebtn").style.display = "none";
+  let delbtn2 = document.getElementById("delbtn");
+  delbtn2.style.display = "block";
+  document.getElementById("exampleModalLongTitle").innerHTML =
+    "Row Delete Notification!";
+  document.getElementById("modal-body").innerHTML =
+    "Are You Sure to Delete This Row";
+
+  // Check if there is a corresponding collapse row
+  let collapseRow = document.getElementById(`collapse_${rowId}`);
+  if (collapseRow) {
+    document.getElementById("modal-body").innerHTML +=
+      "<br/><strong>Warning:</strong> A collapse row exists. Deleting this row will also delete the collapse row.";
+  }
+
+  document.getElementById("btnDelete").innerHTML = "No";
+  document.getElementById("delbtn").addEventListener("click", function () {
+    // Delete the parent row
+    data.splice(rowIndex, 1);
+    data2.splice(rowIndex, 1);
+    localStorage.setItem("data", JSON.stringify(data));
+    localStorage.setItem("data2", JSON.stringify(data2));
+    createTable();
+    createTable2();
+
+     $("#exampleModalCenter").modal("hide");
+  });
+ 
+};
+
+function printTable() {
+  var tableClone = document.getElementById("tabel1").cloneNode(true);
+
+  console.log(tableClone);
+
+  var rows = tableClone.getElementsByTagName("tr");
+  for (var i = 0; i < rows.length; i++) {
+    var lastCell = rows[i].cells[rows[i].cells.length - 1];
+    lastCell.parentNode.removeChild(lastCell);
+  }
+
+  var printWindow = window.open("", "_blank");
+  printWindow.document.write(
+    "<html><head><title>Student Registration Record</title></head><body>"
+  );
+  printWindow.document.write("<h1>Student Registration Record</h1>");
+
+  printWindow.document.body.appendChild(tableClone);
+
+  printWindow.document.write("<style>");
+  printWindow.document.write("h1 { text-align: center; color: blueviolet; }");
+  printWindow.document.write("p { position: fixed; bottom: 0px; }");
+  printWindow.document.write(
+    "span { position: fixed; bottom: 100px; right: 80px; }"
+  );
+  printWindow.document.write(
+    "table { border-collapse: collapse; width: 100%; }"
+  );
+  printWindow.document.write(
+    "th, td { border: 1px solid #dddddd; text-align: left; padding: 4px;width:60px }"
+  );
+  printWindow.document.write("th { background-color: #f2f2f2; }");
+  printWindow.document.write("tr td { width: 80vw; padding:4px width:60px ;}");
+  printWindow.document.write("</style>");
+
+  // printWindow.document.write('<span>Signature:_________________</span>');
+  printWindow.document.write(
+    "<p>Date: " +
+      new Date().toLocaleTimeString("en-US") +
+      new Date().toLocaleDateString() +
+      "</p>"
+  );
+
+  printWindow.document.write("</body></html>");
+  printWindow.document.close();
+
+  printWindow.focus();
+
+  printWindow.print();
+}
+// function reset(){
+
+//    console.log("ghghg");
+// }
+function resetForm() {
+  document.getElementById("submitBtn").innerText = "Submit";
+  document
+    .getElementById("submitBtn")
+    .setAttribute("onclick", " return validate()");
+
+  console.log("reset");
+}
+
+
+(() => {
+  data = JSON.parse(localStorage.getItem("data")) || [];
+  console.log(data);
+  createTable();
+})();
+
+</script>
+</body>
+</html>
+
+

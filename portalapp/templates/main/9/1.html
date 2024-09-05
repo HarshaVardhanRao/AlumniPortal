@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login/Registration</title>
+    <link rel="stylesheet" href="1.css">
+</head>
+<body>
+    <div class="container">
+        <div class="login-form">
+            <h2>Login</h2>
+            <form id="loginForm">
+                <input type="email" name="collegeEmail" placeholder="College Email Address" required>
+                <input type="tel" name="phoneNumber" placeholder="Phone Number" required>
+                <button type="button" onclick="sendOTP('login')">Send OTP</button>
+                <input type="text" name="otp" placeholder="Enter OTP" required>
+                <button type="submit">Login</button>
+            </form>
+        </div>
+        <div class="registration-form">
+            <h2>Registration</h2>
+            <form id="registrationForm">
+                <input type="text" name="username" placeholder="Username" required>
+                <input type="email" name="collegeEmail" placeholder="College Email Address" required>
+                <input type="tel" name="phoneNumber" placeholder="Phone Number" required>
+                <button type="button" onclick="sendOTP('register')">Send OTP</button>
+                <input type="text" name="otp" placeholder="Verify OTP" required>
+                <button type="submit">Register</button>
+            </form>
+        </div>
+    </div>
+    <script src="1.js"></script>
+</body>
+</html>

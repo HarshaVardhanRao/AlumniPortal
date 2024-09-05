@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Project Submission</title>
+    {% comment %} <link rel="stylesheet" href="inno.css"> {% endcomment %}
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        
+        .container {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        h1, h2 {
+            color: #333;
+        }
+        
+        label {
+            display: block;
+            margin: 10px 0 5px;
+        }
+        
+        input, textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0 15px;
+            border: 1px solid #cccccc;
+            border-radius: 5px;
+        }
+        
+        button {
+            padding: 10px 15px;
+            background: #28a745;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        
+        button:hover {
+            background: #218838;
+        }
+        
+        table {
+            width: 100%;
+            margin-top: 20px;
+            border-collapse: collapse;
+        }
+        
+        th, td {
+            padding: 10px;
+            border: 1px solid #dddddd;
+            text-align: left;
+        }
+        
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+    
+    <a href="/landing.html" class="_blank" >
+        <button>Go Back</button>
+    </a>
+  
+
+    <div class="container">
+        <h1>Submit Your Innovation</h1>
+        <form id="submissionForm">
+            <label for="innovationName">Innovation Name:</label>
+            <input type="text" id="innovationName" required>
+            
+            <label for="theme">Theme:</label>
+            <input type="text" id="theme" required>
+            
+            <label for="description">Description:</label>
+            <textarea id="description" required></textarea>
+            
+            <label for="postedBy">Posted By:</label>
+            <input type="text" id="postedBy" required>
+            
+            <button type="submit">Submit</button>
+        </form>
+
+        <h2>Submitted Innovations</h2>
+        <table id="innovationsTable">
+            <tr>
+                <th>Innovation Name</th>
+                <th>Theme</th>
+                <th>Description</th>
+                <th>Posted By</th>
+            </tr>
+        </table>
+    </div>
+
+    <script>
+        document.getElementById('submissionForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+        
+            const innovationName = document.getElementById('innovationName').value;
+            const theme = document.getElementById('theme').value;
+            const description = document.getElementById('description').value;
+            const postedBy = document.getElementById('postedBy').value;
+        
+            const table = document.getElementById('innovationsTable');
+            const newRow = table.insertRow();
+        
+            newRow.insertCell(0).innerText = innovationName;
+            newRow.insertCell(1).innerText = theme;
+            newRow.insertCell(2).innerText = description;
+            newRow.insertCell(3).innerText = postedBy;
+        
+            // Reset the form
+            document.getElementById('submissionForm').reset();
+        });
+    </script>
+</body>
+</html>
