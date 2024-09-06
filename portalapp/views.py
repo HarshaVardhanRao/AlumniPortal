@@ -103,6 +103,9 @@ def alumniDashboard(request):
 def donations(request):
     return render(request, 'main\home\donations\do.html')
 
+def workshop(request):
+    return render(request, 'main\workshop\workshop.html')
+
 def addEvent(request):
     if request.method == 'POST':
         event = request.POST.get('event')
@@ -113,4 +116,4 @@ def addEvent(request):
         event = events.objects.create(alumni=request.user, event=event,title=event_title, date=event_date, location=event_location, desc=event_description)
         event.save()
         return redirect('alumniDashboard')
-    return render(request, 'main\home\workshops\\addEvents.html')
+    return render(request, 'main\home\workshop\\addEvents.html')

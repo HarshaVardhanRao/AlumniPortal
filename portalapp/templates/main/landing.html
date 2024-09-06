@@ -856,13 +856,13 @@ body {
   
 
   <nav class="navbar">
-    <img src="{% 'static images/logo22.png' %}" class=" brand-logo" alt="#">
+    <img src="{% static 'images/logo22.png' %}" class=" brand-logo" alt="#">
     <ul class="nav-links">
       <li class="nav-items"><a href="#">About</a></li>
       <li class="nav-items"><a href="{% url 'createQuery' %}">Student Queries</a></li>
       <li class="nav-items"><a href="{% url 'innovations' %}">Pioneering</a></li>
       <li class="nav-items"><a href="{% url 'events' %}">Events</a></li>
-      <li class="nav-items"><a href="{% url 'workshops' %}">Workshops</a></li>
+      <li class="nav-items"><a href="{% url 'workshop' %}">Workshops</a></li>
       <li class="nav-items"><a href="{% url 'successStrories' %}">Success Stories </a></li>
     </ul>
 
@@ -897,11 +897,11 @@ body {
     </div>
     <div class="video-card">
       <img src="{% static 'images/mentorship.png' %}" class="video-card-image" alt="#">
-      <Video src="./videos/guidance.mp4" muted loop class="card-video"></Video>
+      <Video src="{% static 'videos/guidance.mp4' %}" muted loop class="card-video"></Video>
     </div>
     <div class="video-card">
       <img src="{% static 'images/join.png' %}" class="video-card-image" alt="#">
-      <Video src="./videos/join.mp4" muted loop class="card-video"></Video>
+      <Video src="{% static 'videos/join.mp4' %}" muted loop class="card-video"></Video>
     </div>
   </div>
 </div>

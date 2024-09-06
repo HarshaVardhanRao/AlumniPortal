@@ -12,4 +12,5 @@ urlpatterns = [
     path('createQuery', views.createQuery, name='createQuery'),
     path('aluminDashboard', views.alumniDashboard, name='aluminDashboard'),
     path('donations', views.donations, name='donations'),
+    path('workshop', views.workshop,name='workshop'),
 ]
