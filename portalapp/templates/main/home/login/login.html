@@ -26,7 +26,7 @@
 }
 
 html {
-    font-size: 62.5%;
+    font-size: 60.5%;
     scroll-behavior: smooth;
 }
 
@@ -53,13 +53,13 @@ body {
 
 .wrapper .form-container {
     position: absolute;
-    top: 0;
+    top: -1;
     left: 0;
     display: flex;
     align-items: center;
     justify-content: center;
     width: 100%;
-    height: 130%;
+    height: 135%;
     background-color: var(--whiteColor);
     border-radius: .5rem;
     box-shadow: 0 0 1rem 0 rgba(0 0 0 / .2);
@@ -83,7 +83,7 @@ body {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    font-size: 1.6rem;
+    font-size: 1.3rem;
     text-transform: capitalize;
     color: var(--labelColor);
     padding: 0 .5rem;
@@ -110,6 +110,30 @@ body {
     font-size: 1.6rem;
     color: var(--labelColor);
     background: transparent;
+}
+
+.radio-container {
+    display: flex;
+    gap: 20px; /* Adjust the gap between radio buttons as needed */
+}
+
+.radio-label {
+    display: flex;
+    justify-content: center;
+    font-size: small;
+    align-items: center;
+    gap: 10px; /* Adjust the gap between radio button and label text */
+}
+
+.radio {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    transition: transform 0.3s ease; /* Animation for scaling */
+}
+
+.radio:checked {
+    transform: scale(1.2); /* Scale up when checked */
 }
 
 form .form-group input:focus~label,
@@ -262,9 +286,19 @@ form .form-group input:valid~i {
                     <i class="fas fa-at"></i>
                     <label for="">email</label>
                 </div>
-                <div class="form-group">
-                    <input type="checkbox" name="is_alumin">
+                
+                <div class="radio-container">
+                    <label class="radio-label">
+                        <input type="radio" name="option" class="radio">
+                        Alumni
+                    </label>
+                    <label class="radio-label">
+                        <input type="radio" name="option" class="radio">
+                        Student
+                    </label>
                 </div>
+                
+
                 <div class="form-group">
                     <input type="password" name="password" required>
                     <i class="fas fa-lock"></i>
